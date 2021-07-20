@@ -47,18 +47,25 @@ post '/visit' do
 		:date_time => 'Enter the date'
 	}
 
-	# Для каждой пары ключ, значение
-	hh.each do |key, value|
-		# Если параметр пуст
-		if params[key] == ""
-			# Переменной error присваиваем value из хеша
-			# (А value из хеша это сообщение об ошибке)
-			# т.е переменной error присваиваем сообщение об ошибке
-			@error = hh[key]
-			# вернуть представление visit
-			return erb :visit
-		end
+	# # Для каждой пары ключ, значение
+	# hh.each do |key, value|
+	# 	# Если параметр пуст
+	# 	if params[key] == ""
+	# 		# Переменной error присваиваем value из хеша
+	# 		# (А value из хеша это сообщение об ошибке)
+	# 		# т.е переменной error присваиваем сообщение об ошибке
+	# 		@error = hh[key]
+	# 		# вернуть представление visit
+	# 		return erb :visit
+	# 	end
+	# end
+	
+	@error = hh.select {|key,_| params[key] == ""}.values.join(", ")
+
+	if @error != ""
+		return erb :visit
 	end
+	
 	@message = "Dear #{@user}, you will add to our system, phone is - #{@phone}, date - #{@date}, master - #{@choise}, color - #{@color}"
 
 	f = File.open './public/users.txt', 'a'
