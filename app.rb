@@ -28,16 +28,36 @@ post '/visit' do
 	@choise = params[:choise]
 	@color = params[:color]
 
-	if @user == ""
-		@error = "Write a user name"
-	elsif @phone == ""
-		@error = "Write a phone number"
-	elsif @date == ""
-		@error = "Write the data"
-	end
+	# if @user == ""
+	# 	@error = "Write a user name"
+	# elsif @phone == ""
+	# 	@error = "Write a phone number"
+	# elsif @date == ""
+	# 	@error = "Write the data"
+	# end
 
-	if @error != ""
-		return erb :visit
+	# if @error != ""
+	# 	return erb :visit
+	# end
+
+	# Hash
+	hh = {
+		:user_name => 'Enter the name', 
+		:user_phone => 'Enter the phone', 
+		:date_time => 'Enter the date'
+	}
+
+	# Для каждой пары ключ, значение
+	hh.each do |key, value|
+		# Если параметр пуст
+		if params[key] == ""
+			# Переменной error присваиваем value из хеша
+			# (А value из хеша это сообщение об ошибке)
+			# т.е переменной error присваиваем сообщение об ошибке
+			@error = hh[key]
+			# вернуть представление visit
+			return erb :visit
+		end
 	end
 	@message = "Dear #{@user}, you will add to our system, phone is - #{@phone}, date - #{@date}, master - #{@choise}, color - #{@color}"
 

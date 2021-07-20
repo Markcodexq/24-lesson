@@ -1,10 +1,1 @@
 
-User: Mark, Phone: 89506390764, Date: 2021-07-21, Master: Walter, Color: #5484ed
-User: , Phone: , Date: , Master: Choose the master, Color: #7bd148
-User: , Phone: , Date: , Master: Choose the master, Color: #7bd148
-User: , Phone: , Date: , Master: Choose the master, Color: #7bd148
-User: , Phone: , Date: , Master: Choose the master, Color: #7bd148
-User: , Phone: , Date: , Master: Choose the master, Color: #a4bdfc
-User: , Phone: , Date: , Master: Choose the master, Color: #7ae7bf
-User: , Phone: , Date: , Master: Choose the master, Color: #7ae7bf
-User: , Phone: , Date: , Master: Choose the master, Color: #7bd148
